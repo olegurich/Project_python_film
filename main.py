@@ -29,7 +29,7 @@ def main() -> None:
                     print("3. Статистика запросов")
                     print("0. Выход")
 
-                    choice = input("Ваш выбор: ").strip()
+                    choice = input("Сделайте ваш выбор и нажмите 'Enter': ").strip()
 
                     if choice == "1":
                         try:
