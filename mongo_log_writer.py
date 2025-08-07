@@ -36,7 +36,7 @@ def log_search(data: dict) -> int:
         return 0
     try:
         data["createdAt"] = datetime.now()
-        collection.insert_one(data)
+        collection.insert_one(data)                           # Метод из библиотеки pymongo, чтобы  вставить один документ в MongoDB
         return 1
     except Exception as e:
         logger.error(f"Ошибка записи лога в MongoDB: {e}", exc_info=True)

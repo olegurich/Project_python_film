@@ -42,13 +42,13 @@ def fetch_logs() -> list[dict]:
 
 # === Топ 5 популярных запросов ===
 
-def get_top_queries(logs: list[dict]) -> list[tuple]:          # функция принимает список логов
+def get_top_queries(logs: list[dict]) -> list[tuple]:         
     """
     Получает топ-5 самых популярных запросов из списка логов.
     :param logs: Список логов (каждый лог — словарь).
     :return: Список кортежей вида ((тип, текст запроса), количество повторений).
     """
-    counter = {}                                               # cоздаётся пустой словарь для подсчёта уникальных запросoв.
+    counter = {}                                              
     for log in logs:
         t, q = extract_type_and_query(log)                     # Извлекаем из лога тип запроса (t, например "keyword" или "genre_year") и (q, например "Horror (2020-2023)").
         if t and q:                                            # Если тип, и строка запроса не пустые — учитываем.
@@ -76,7 +76,7 @@ def get_last_queries(logs: list[dict]) -> list[tuple]:
 
 # === Вспомогательные функции ===
 
-def extract_type_and_query(log: dict) -> tuple[str, str|None, int]:      # Функция берет лог запроса из Mongo
+def extract_type_and_query(log: dict) -> tuple[str, str|None, int]:     
     """
     Извлекает тип запроса и текст запроса из записи лога.
     :param log: Словарь с данными одного лога.

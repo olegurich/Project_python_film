@@ -1,7 +1,7 @@
 import logging
 from datetime import datetime
 
-def log_error(error: Exception, func_name: str):
+def log_error(error: Exception, func_name: str) -> None: 
     """
     Логирует ошибку с указанием функции и времени.
     :param error: Объект исключения.
